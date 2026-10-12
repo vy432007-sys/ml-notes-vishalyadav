@@ -544,6 +544,12 @@ lectureButtons.forEach(button => {
   button.addEventListener("click", () => {
     const lectureNumber = button.dataset.lecture;
     const lecture = lectures[lectureNumber];
+    if (notesArea.dataset.openLecture === lectureNumber) {
+      notesArea.innerHTML = "";
+      delete notesArea.dataset.openLecture;
+      button.classList.remove("active");
+      return;
+    }
 
     if (!lecture) return;
 
@@ -551,6 +557,7 @@ lectureButtons.forEach(button => {
       <h1>${lecture.title}</h1>
       ${lecture.content}
     `;
+    notesArea.dataset.openLecture = lectureNumber;
 
     lectureButtons.forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
