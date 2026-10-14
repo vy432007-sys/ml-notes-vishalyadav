@@ -1,11 +1,12 @@
-
+// Mobile menu
 const menuBtn = document.querySelector("#menu-btn");
 const sidebar = document.querySelector("#sidebar");
 
-menuBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("hidden");
-});
-
+if (menuBtn && sidebar) {
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("hidden");
+  });
+}
 
 const lectures = {
   1: {
@@ -262,288 +263,530 @@ Training Inputs + Correct Outputs
 
         <p>
           An email system can use signals such as message text,
-          sender information, links, and previous labelled examples
-          to estimate whether a message is spam.
+          links, sender information, and other characteristics
+          to predict whether an email is spam.
         </p>
 
-        <p><strong>Input:</strong> Email-related features.</p>
-        <p><strong>Output:</strong> A spam prediction or score.</p>
-
-        <h3>5.2 Image classification</h3>
+        <h3>5.2 Recommendation systems</h3>
 
         <p>
-          An image-classification model receives an image and predicts
-          which category it belongs to. For example, it may classify
-          an image as a cat, dog, car, or tree.
+          Streaming platforms and online stores can use past
+          behaviour to recommend movies, music, products, or other
+          content that may interest a user.
         </p>
+
+        <h3>5.3 Healthcare</h3>
+
+        <p>
+          ML models can help analyse medical images and other
+          healthcare data. Their predictions need appropriate
+          validation and should not automatically replace
+          professional judgement.
+        </p>
+
+        <h3>5.4 Finance</h3>
+
+        <p>
+          ML can help identify unusual transactions, estimate
+          financial risks, and detect patterns that may indicate
+          fraudulent activity.
+        </p>
+
+        <h3>5.5 Transportation</h3>
+
+        <p>
+          ML is used in applications such as traffic prediction,
+          route estimation, and perception systems in vehicles.
+        </p>
+
+        <h3>5.6 Natural Language Processing</h3>
+
+        <p>
+          ML helps computers process and generate human language.
+          Examples include translation, text classification,
+          chatbots, and speech-related applications.
+        </p>
+
+        <h3>5.7 Computer Vision</h3>
+
+        <p>
+          Computer Vision uses computational methods to analyse
+          images and videos. Applications include object detection,
+          image classification, and face detection.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. What Makes Machine Learning Possible?</h2>
+
+        <h3>6.1 Availability of data</h3>
+
+        <p>
+          ML algorithms learn from examples. More data can sometimes
+          help a model learn better patterns, provided that the data
+          is relevant, sufficiently representative, and of good quality.
+        </p>
+
+        <h3>6.2 Computing power</h3>
+
+        <p>
+          Modern processors and GPUs make it possible to perform
+          the large number of calculations required by many
+          ML algorithms, especially Deep Learning models.
+        </p>
+
+        <h3>6.3 Better algorithms and tools</h3>
+
+        <p>
+          Improvements in algorithms, programming libraries,
+          and development tools make it easier to train, evaluate,
+          and deploy ML models.
+        </p>
+
+        <h3>6.4 Storage and cloud computing</h3>
+
+        <p>
+          Modern storage systems and cloud platforms allow
+          organisations to store and process large datasets
+          and access computing resources when required.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Basic Machine Learning Development Life Cycle</h2>
+
+        <ol>
+          <li><strong>Define the problem:</strong> Decide what you want to predict or classify.</li>
+          <li><strong>Collect data:</strong> Obtain relevant examples for the task.</li>
+          <li><strong>Prepare data:</strong> Clean the data and handle missing or incorrect values.</li>
+          <li><strong>Explore data:</strong> Understand distributions, relationships, and possible patterns.</li>
+          <li><strong>Choose a model:</strong> Select an algorithm suitable for the problem.</li>
+          <li><strong>Train the model:</strong> Let the algorithm learn from training data.</li>
+          <li><strong>Evaluate the model:</strong> Test its performance on data not used for training.</li>
+          <li><strong>Improve the model:</strong> Adjust the approach if performance is inadequate.</li>
+          <li><strong>Deploy the model:</strong> Make the model available for real-world use.</li>
+          <li><strong>Monitor the model:</strong> Check its performance and update it when necessary.</li>
+        </ol>
 
         <pre>
-Image
-  ↓
-Trained image model
-  ↓
-Predicted category: Dog
+Problem Definition
+        ↓
+Data Collection
+        ↓
+Data Preparation
+        ↓
+Model Training
+        ↓
+Model Evaluation
+        ↓
+Deployment
+        ↓
+Monitoring and Improvement
         </pre>
-
-        <p>
-          The model learns useful visual patterns from training
-          images. Its predictions can still be wrong, particularly
-          when images differ significantly from the training data.
-        </p>
-
-        <h3>5.3 Recommendation systems</h3>
-
-        <p>
-          Streaming platforms and online stores may use information
-          about user activity, item characteristics, and interactions
-          to recommend content or products that a user may find relevant.
-        </p>
-
-        <h3>5.4 Data mining and pattern discovery</h3>
-
-        <p>
-          Data mining involves discovering useful patterns and
-          relationships in datasets. ML techniques can support
-          tasks such as grouping similar observations, identifying
-          unusual activity, and predicting outcomes.
-        </p>
-
-        <h3>5.5 Other examples</h3>
-
-        <ul>
-          <li>Speech recognition and voice assistants.</li>
-          <li>Fraud detection in financial transactions.</li>
-          <li>Demand forecasting in businesses.</li>
-          <li>Predictive maintenance for machines.</li>
-          <li>Medical image analysis to assist qualified professionals.</li>
-        </ul>
       </section>
 
       <section>
-        <h2>6. Why Has Machine Learning Become So Important?</h2>
-
-        <h3>6.1 Growth in available data</h3>
-
-        <p>
-          Digital services, mobile devices, websites, sensors, and
-          online transactions generate large amounts of data.
-          These observations can provide examples from which
-          learning algorithms discover patterns.
-        </p>
-
-        <h3>6.2 Improvements in computing hardware</h3>
-
-        <p>
-          Faster processors, GPUs, cloud computing, and improved
-          computing infrastructure have made it possible to train
-          many models on larger datasets and perform more
-          computationally demanding tasks.
-        </p>
-
-        <h3>6.3 Improvements in algorithms and tools</h3>
-
-        <p>
-          Research has produced better learning methods, while
-          software libraries and development tools have made
-          experimentation more accessible.
-        </p>
-
-        <p>
-          These factors work together. Large datasets alone do not
-          guarantee a good model: data quality, algorithm choice,
-          computing resources, and evaluation all matter.
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Career Scope of Machine Learning</h2>
-
-        <p>
-          Machine Learning knowledge is useful across technology,
-          finance, healthcare, retail, manufacturing, agriculture,
-          and many other industries. Different roles require
-          different combinations of programming, mathematics,
-          statistics, data engineering, and domain knowledge.
-        </p>
-
-        <ul>
-          <li><strong>Data Analyst:</strong> Analyses data to answer questions and communicate findings.</li>
-          <li><strong>Data Scientist:</strong> Uses statistics, programming, and modelling to investigate data and build predictive solutions.</li>
-          <li><strong>ML Engineer:</strong> Develops, deploys, and maintains machine-learning systems.</li>
-          <li><strong>AI Researcher:</strong> Investigates new algorithms, models, and learning methods.</li>
-          <li><strong>Data Engineer:</strong> Builds systems that collect, transform, and deliver data for analysis and modelling.</li>
-        </ul>
-
-        <h3>Foundational skills</h3>
-
-        <ul>
-          <li>Python programming.</li>
-          <li>Mathematics, especially linear algebra and calculus.</li>
-          <li>Probability and statistics.</li>
-          <li>Data handling and visualisation.</li>
-          <li>ML algorithms and model evaluation.</li>
-          <li>Problem-solving and communication.</li>
-        </ul>
-
-        <p>
-          A strong foundation matters more than learning many
-          libraries without understanding the underlying concepts.
-        </p>
-      </section>
-
-      <section>
-        <h2>8. Machine Learning Development Life Cycle</h2>
-
-        <p>
-          Building an ML solution involves more than selecting an
-          algorithm. A typical workflow includes understanding the
-          problem, preparing data, training models, evaluating them,
-          and deploying the selected solution.
-        </p>
-
-        <pre>
-1. Problem definition
-         ↓
-2. Data collection
-         ↓
-3. Data preparation
-         ↓
-4. Exploratory data analysis
-         ↓
-5. Feature engineering
-         ↓
-6. Model selection and training
-         ↓
-7. Evaluation
-         ↓
-8. Deployment and monitoring
-         ↺
-   Improvement when needed
-        </pre>
-
-        <h3>Stage 1: Problem definition</h3>
-        <p>
-          Define the task, the intended users, the target variable
-          if applicable, and the measure of success. For example,
-          determine whether the goal is to predict house prices
-          or classify emails as spam.
-        </p>
-
-        <h3>Stage 2: Data collection</h3>
-        <p>
-          Gather relevant observations from suitable sources.
-          The data should be appropriate for the problem and
-          collected and used responsibly.
-        </p>
-
-        <h3>Stage 3: Data preparation</h3>
-        <p>
-          Inspect missing values, incorrect entries, duplicates,
-          inconsistent formats, and other quality issues. Prepare
-          the data so it can be used reliably.
-        </p>
-
-        <h3>Stage 4: Exploratory data analysis</h3>
-        <p>
-          Use summary statistics and visualisations to understand
-          distributions, relationships, unusual observations, and
-          possible problems in the dataset.
-        </p>
-
-        <h3>Stage 5: Feature engineering</h3>
-        <p>
-          Select, transform, or construct useful input variables.
-          Good features can help a model learn relevant patterns.
-        </p>
-
-        <h3>Stage 6: Model selection and training</h3>
-        <p>
-          Choose a suitable algorithm and fit it to the training
-          data. Different algorithms may behave differently
-          depending on the task and dataset.
-        </p>
-
-        <h3>Stage 7: Evaluation</h3>
-        <p>
-          Test the model on data that was not used to fit it.
-          Choose evaluation metrics appropriate to the problem
-          and check whether the model generalises to new examples.
-        </p>
-
-        <h3>Stage 8: Deployment and monitoring</h3>
-        <p>
-          Integrate the model into a usable system, monitor its
-          performance, and update it when justified by new data
-          or changing requirements.
-        </p>
-
-        <p>
-          <strong>Remember:</strong> The workflow is iterative.
-          Evaluation may reveal a need to improve the data,
-          features, model, or problem definition.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Quick Revision Notes</h2>
+        <h2>8. Quick Revision</h2>
 
         <ul>
           <li>Machine Learning is a field of Artificial Intelligence.</li>
-          <li>ML models learn patterns from examples or data.</li>
-          <li>Traditional programs execute explicitly written rules.</li>
-          <li>A feature is an input variable; a target is the value to predict.</li>
-          <li>A learning algorithm learns a model from training data.</li>
-          <li>ML can support classification, prediction, recommendation, and pattern discovery.</li>
-          <li>More data does not automatically mean better predictions.</li>
-          <li>Models must be evaluated on suitable unseen data.</li>
-          <li>The ML development life cycle includes preparation, training, evaluation, deployment, and monitoring.</li>
+          <li>ML learns patterns from data instead of relying only on manually written rules.</li>
+          <li>Features are the inputs; the target is what we want to predict.</li>
+          <li>An algorithm learns a model from training data.</li>
+          <li>A trained model can make predictions on new inputs.</li>
+          <li>Data quality and model evaluation are important for reliable predictions.</li>
+          <li>ML is useful for complex patterns, but it is not necessary for every problem.</li>
         </ul>
       </section>
 
       <section>
-        <h2>10. Practice Questions</h2>
+        <h2>9. Practice Questions</h2>
 
-        <h3>Conceptual questions</h3>
         <ol>
-          <li>Define Machine Learning in your own words.</li>
+          <li>What is Machine Learning?</li>
           <li>Explain the difference between traditional programming and ML.</li>
-          <li>Why might ML be useful for email spam detection?</li>
-          <li>What is the difference between a feature and a target?</li>
-          <li>Explain how a model learns from training examples.</li>
-          <li>Why can a trained model make incorrect predictions?</li>
-          <li>Explain the roles of data and computing hardware in ML development.</li>
-          <li>List the stages of a typical ML development life cycle.</li>
-        </ol>
-
-        <h3>Application questions</h3>
-        <ol>
-          <li>
-            You have historical house data containing area, location,
-            and sale price. Identify the features and target for
-            predicting the price of a new house.
-          </li>
-          <li>
-            Explain how a system could use labelled emails to learn
-            to distinguish spam from legitimate messages.
-          </li>
-          <li>
-            Give one problem that is better solved with explicit
-            rules than ML, and explain why.
-          </li>
+          <li>What are features and targets? Give an example.</li>
+          <li>How can ML be used to predict house prices?</li>
+          <li>Why is ML useful for spam detection?</li>
+          <li>Give five real-world applications of ML.</li>
+          <li>List the main stages in the ML development life cycle.</li>
+          <li>Why should we evaluate a model on data not used during training?</li>
+          <li>Does having more data always guarantee a better model? Explain briefly.</li>
+          <li>Why should we not use ML for every problem?</li>
         </ol>
       </section>
     `
-  }
+  },
+
+  2: {
+    title: "Lecture 2: AI vs ML vs DL",
+    content: `
+      <section>
+        <h2>1. Introduction</h2>
+
+        <p>
+          Artificial Intelligence (AI), Machine Learning (ML), and
+          Deep Learning (DL) are related concepts, but they do not
+          mean the same thing.
+        </p>
+
+        <p>
+          AI is the broadest field. ML is a part of AI, and Deep
+          Learning is a part of ML.
+        </p>
+
+        <pre>
+Artificial Intelligence (AI)
+        └── Machine Learning (ML)
+                └── Deep Learning (DL)
+        </pre>
+
+        <p>
+          This means that every Deep Learning system is a Machine
+          Learning system, and ML is part of AI. However, not every
+          AI system uses ML, and not every ML system uses DL.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. What Is Artificial Intelligence?</h2>
+
+        <p>
+          Artificial Intelligence is the broad field of building
+          machines or computer systems that can perform tasks
+          associated with intelligence, such as reasoning,
+          problem-solving, planning, and understanding language.
+        </p>
+
+        <h3>Example: Rule-based system</h3>
+
+        <p>
+          Imagine a simple system that follows a set of rules:
+        </p>
+
+        <pre>
+IF temperature is high
+THEN turn on the fan
+        </pre>
+
+        <p>
+          The system follows rules written by a human. It does not
+          necessarily learn from examples. It can still be considered
+          an AI approach in a broad, rule-based sense.
+        </p>
+
+        <h3>Examples of AI tasks</h3>
+
+        <ul>
+          <li>Planning a route from one location to another.</li>
+          <li>Solving a puzzle using logical rules.</li>
+          <li>Playing a game using search and decision-making.</li>
+          <li>Understanding and generating human language.</li>
+          <li>Making decisions based on available information.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. What Is Machine Learning?</h2>
+
+        <p>
+          Machine Learning is a subset of AI. It enables computer
+          systems to learn patterns from data and use those patterns
+          to make predictions or decisions.
+        </p>
+
+        <p>
+          Instead of manually writing every rule, we provide
+          examples to a learning algorithm. The algorithm learns
+          a model that can be used on new data.
+        </p>
+
+        <h3>Example: Spam detection</h3>
+
+        <p>
+          Suppose we want to classify emails as spam or not spam.
+          We provide examples of emails along with their labels.
+          An ML algorithm learns patterns from these examples.
+        </p>
+
+        <pre>
+Emails + Correct Labels
+        ↓
+Learning Algorithm
+        ↓
+Trained Model
+        ↓
+New Email
+        ↓
+Spam / Not Spam
+        </pre>
+
+        <h3>Important terms</h3>
+
+        <ul>
+          <li><strong>Data:</strong> Examples used for learning.</li>
+          <li><strong>Features:</strong> Information used as input to the model.</li>
+          <li><strong>Labels:</strong> Correct categories or outputs supplied during training in supervised learning.</li>
+          <li><strong>Algorithm:</strong> The procedure that learns from examples.</li>
+          <li><strong>Model:</strong> The learned system used to make predictions.</li>
+        </ul>
+
+        <h3>Examples of ML</h3>
+
+        <ul>
+          <li>Predicting house prices.</li>
+          <li>Detecting fraudulent transactions.</li>
+          <li>Recommending movies.</li>
+          <li>Predicting customer demand.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. What Is Deep Learning?</h2>
+
+        <p>
+          Deep Learning is a subset of Machine Learning that uses
+          neural networks with multiple layers to learn patterns
+          from data.
+        </p>
+
+        <p>
+          These networks contain connected computational units
+          called artificial neurons. During training, the network
+          adjusts its parameters to reduce prediction errors.
+        </p>
+
+        <h3>Why is it called Deep Learning?</h3>
+
+        <p>
+          It is called "deep" because the neural network contains
+          multiple processing layers between its input and output.
+          These layers can learn increasingly complex representations
+          of the data.
+        </p>
+
+        <pre>
+Input Data
+    ↓
+Input Layer
+    ↓
+Hidden Layer 1
+    ↓
+Hidden Layer 2
+    ↓
+Hidden Layer 3
+    ↓
+Output Layer
+    ↓
+Prediction
+        </pre>
+
+        <p>
+          This is a simplified illustration. Actual neural networks
+          can have different architectures and numbers of layers.
+        </p>
+
+        <h3>Example: Image recognition</h3>
+
+        <p>
+          Imagine training a model to identify cats in images.
+          Earlier layers may learn simple visual patterns, such as
+          edges and textures. Deeper layers can combine these into
+          more complex patterns, such as shapes and object parts.
+          The final output can represent the predicted class.
+        </p>
+
+        <h3>Applications of Deep Learning</h3>
+
+        <ul>
+          <li>Image and object recognition.</li>
+          <li>Speech recognition.</li>
+          <li>Language models and text generation.</li>
+          <li>Video analysis.</li>
+          <li>Some autonomous driving systems.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. AI vs ML vs DL: Comparison</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Basis</th>
+              <th>AI</th>
+              <th>ML</th>
+              <th>DL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meaning</td>
+              <td>Broad field of intelligent systems.</td>
+              <td>Systems learn patterns from data.</td>
+              <td>ML using multi-layer neural networks.</td>
+            </tr>
+            <tr>
+              <td>Scope</td>
+              <td>Broadest category.</td>
+              <td>Subset of AI.</td>
+              <td>Subset of ML.</td>
+            </tr>
+            <tr>
+              <td>Approach</td>
+              <td>May use rules, search, planning, ML, or other methods.</td>
+              <td>Uses algorithms to learn patterns from data.</td>
+              <td>Uses neural networks with multiple layers.</td>
+            </tr>
+            <tr>
+              <td>Data</td>
+              <td>Depends on the method.</td>
+              <td>Training data is generally important.</td>
+              <td>Often benefits from large datasets.</td>
+            </tr>
+            <tr>
+              <td>Feature learning</td>
+              <td>Depends on the method.</td>
+              <td>Features may be designed manually or learned.</td>
+              <td>Can learn useful features automatically.</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>Rule-based puzzle solver.</td>
+              <td>House-price prediction using a decision tree.</td>
+              <td>Neural network for image recognition.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>6. Traditional ML vs Deep Learning</h2>
+
+        <h3>Traditional Machine Learning</h3>
+
+        <p>
+          In many traditional ML workflows, people identify or
+          construct useful features before training the model.
+          For example, an image classification system might use
+          manually designed measurements as inputs.
+        </p>
+
+        <h3>Deep Learning</h3>
+
+        <p>
+          Deep Learning models can learn useful representations
+          directly from raw or minimally processed data. For
+          example, a neural network can learn visual features
+          from image pixels during training.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Basis</th>
+              <th>Traditional ML</th>
+              <th>Deep Learning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Feature extraction</td>
+              <td>Often requires more manual feature engineering.</td>
+              <td>Can learn features automatically.</td>
+            </tr>
+            <tr>
+              <td>Data requirement</td>
+              <td>Some methods work well with smaller datasets.</td>
+              <td>Often benefits from large datasets.</td>
+            </tr>
+            <tr>
+              <td>Computational cost</td>
+              <td>Often lower, depending on the model and dataset.</td>
+              <td>Can require substantial computing resources.</td>
+            </tr>
+            <tr>
+              <td>Typical applications</td>
+              <td>Tabular prediction and many structured-data tasks.</td>
+              <td>Images, audio, language, and other complex data.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          These are general tendencies, not strict rules. The
+          best method depends on the problem, data, resources,
+          and evaluation results.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Quick Summary</h2>
+
+        <ul>
+          <li><strong>AI:</strong> The broad field of creating systems that perform intelligent tasks.</li>
+          <li><strong>ML:</strong> A subset of AI that learns patterns from data.</li>
+          <li><strong>DL:</strong> A subset of ML that uses neural networks with multiple layers.</li>
+          <li>Rule-based AI can work without learning from data.</li>
+          <li>Traditional ML often uses manually selected features.</li>
+          <li>Deep Learning can automatically learn useful features from data.</li>
+          <li>Deep Learning often requires more data and computing power, though requirements vary.</li>
+          <li>AI is broader than ML, and ML is broader than DL.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>8. Revision Questions</h2>
+
+        <ol>
+          <li>Define Artificial Intelligence, Machine Learning, and Deep Learning.</li>
+          <li>Explain the relationship between AI, ML, and DL.</li>
+          <li>What is a rule-based system? Give one example.</li>
+          <li>Why can it be difficult to solve complex problems using manually written rules?</li>
+          <li>Explain how a supervised ML model learns from data and labels.</li>
+          <li>Differentiate traditional programming from Machine Learning.</li>
+          <li>What is an artificial neural network?</li>
+          <li>Why is Deep Learning called "deep"?</li>
+          <li>Explain feature engineering and automatic feature learning.</li>
+          <li>Give three applications of Deep Learning.</li>
+          <li>Does every AI system use ML? Explain your answer.</li>
+          <li>Does every ML system use Deep Learning? Explain your answer.</li>
+        </ol>
+      </section>
+    `
+  },
 };
 
 
+// Automatically create a button for every lecture in the lectures object.
 const notesArea = document.querySelector("#notes-area");
-const lectureButtons = document.querySelectorAll(".lecture-btn");
+const existingButtons = [...document.querySelectorAll(".lecture-btn")];
+const buttonContainer = existingButtons[0]?.parentElement || sidebar;
 
-lectureButtons.forEach(button => {
-  button.addEventListener("click", () => {
+if (notesArea && buttonContainer) {
+  // Remove old hard-coded lecture buttons. Their container remains in index.html.
+  existingButtons.forEach(button => button.remove());
+
+  // Generate buttons from the lecture data above.
+  Object.keys(lectures).forEach(lectureNumber => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "lecture-btn";
+    button.dataset.lecture = lectureNumber;
+    button.textContent = lectures[lectureNumber].title;
+    buttonContainer.appendChild(button);
+  });
+
+  // One delegated click handler works for all current and future lecture buttons.
+  buttonContainer.addEventListener("click", event => {
+    const button = event.target.closest(".lecture-btn");
+    if (!button || !buttonContainer.contains(button)) return;
+
     const lectureNumber = button.dataset.lecture;
     const lecture = lectures[lectureNumber];
+    if (!lecture) return;
+
+    // Clicking the open lecture again hides its notes.
     if (notesArea.dataset.openLecture === lectureNumber) {
       notesArea.innerHTML = "";
       delete notesArea.dataset.openLecture;
@@ -551,15 +794,17 @@ lectureButtons.forEach(button => {
       return;
     }
 
-    if (!lecture) return;
-
     notesArea.innerHTML = `
       <h1>${lecture.title}</h1>
       ${lecture.content}
     `;
+
     notesArea.dataset.openLecture = lectureNumber;
 
-    lectureButtons.forEach(btn => btn.classList.remove("active"));
+    buttonContainer.querySelectorAll(".lecture-btn").forEach(btn => {
+      btn.classList.remove("active");
+    });
+
     button.classList.add("active");
   });
-});
+}
